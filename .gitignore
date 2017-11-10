@@ -4,3 +4,7 @@
 *.zip
 *.tar
 *.tar.gz
+*.pdf
+Testcases
+Testsuite
+Debug
