@@ -69,11 +69,11 @@ struct Graph buildGraph(struct Maze maze)
     // Create edges after checking for walls
     for(int i = 0; i < Y; i++) {
         for(int j = 0; j < Y; j++) {
-            int index = 5 * i + j;
+            int index = Y * i + j;
             if(!NORTH(maze.maze_array[i][j])) {
                 if(i - 1 >= 0) {
-                    adj_matrix.graph_array[index][index - 5] = 1;
-                    adj_matrix.graph_array[index - 5][index] = 1;
+                    adj_matrix.graph_array[index][index - Y] = 1;
+                    adj_matrix.graph_array[index - Y][index] = 1;
                 }
             }
 
@@ -86,8 +86,8 @@ struct Graph buildGraph(struct Maze maze)
 
             if(!SOUTH(maze.maze_array[i][j])) {
                 if(i + 1 < Y) {
-                    adj_matrix.graph_array[index][index + 5] = 1;
-                    adj_matrix.graph_array[index + 5][index] = 1;
+                    adj_matrix.graph_array[index][index + Y] = 1;
+                    adj_matrix.graph_array[index + Y][index] = 1;
                 }
             }
 
